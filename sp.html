@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Volvemos a intentarlo?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fce4ec, #f8f0f6);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #f8bbd0;
+      padding: 20px 0;
+      animation: fadeInDown 2s ease;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: white;
+      margin: 0;
+      text-shadow: 2px 2px #ec407a;
+    }
+
+    main {
+      padding: 20px 10px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .message {
+      font-size: 1.4rem;
+      color: #6c5b7b;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    .question {
+      font-size: 2rem;
+      color: #d81b60;
+      font-weight: bold;
+      margin: 10px 0;
+      position: relative;
+      animation: bounce 2s infinite;
+    }
+
+    .frog-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .frog-images img {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .frog-images img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Poem Section */
+    .poem-container {
+      
+      background-size: cover;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 450px;
+      position: relative;
+    }
+
+   .poem-text {
+  background: url('C:/Users/echicango/Downloads/SP/fond.png') no-repeat center center;
+   background-size: cover;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: dark;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0px 120px 0px 380px; /* ajusta el texto más a la derecha */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+  height: 400px; /* 🔹 límite vertical */
+  overflow-y: auto; /* 🔹 scroll interno si se necesita */
+  white-space: pre-line;
+  animation: revealPoem 2.5s ease-out forwards;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  line-height: 0.8;
+  font-style: italic;
+  background-position: -20px center
+  
+}
+
+
+
+
+    footer {
+      background-color: #f8bbd0;
+      padding: 15px;
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    #music-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #f8bbd0;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes revealPoem {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        filter: blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .message {
+        font-size: 1.2rem;
+      }
+
+      .question {
+        font-size: 1.6rem;
+      }
+
+      .frog-images img {
+        width: 80px;
+      }
+
+      .poem-text {
+        font-size: 0.9rem;
+        padding: 20px;
+      }
+
+      #music-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .poem-text {
+        padding: 15px;
+        font-size: 0.85rem;
+      }
+
+      .message, .question {
+        padding: 0 10px;
+      }
+    }
+	@media (max-width: 768px) {
+  .poem-text {
+    background-image: url('C:/Users/echicango/Downloads/SP/fond.png') !important;
+    background-position: -30px top !important; /* 👈 corrige desplazamiento izquierdo */
+    background-size: 180% !important;
+    background-repeat: no-repeat !important;
+    padding: 40px 30px 40px 100px !important;
+    font-size: 0.95rem;
+    line-height: 0.5;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+	text-align: right-side;
+
+  }
+}
+
+#mensajeBienvenida {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      font-size: 1.2rem;
+      color: #d81b60;
+      margin-top: 20px;
+    }
+
+    #mensajeBienvenida.mostrar {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+
+
+
+
+<body>
+
+  
+
+
+
+  <header>
+    <h1>Mi sapita hermosa 🐸</h1>
+  </header>
+
+
+<!-- 🎵 Música de fondo -->
+ <audio id="backgroundMusic" loop preload="auto">
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  Tu navegador no soporta audio.
+</audio>
+
+<button id="iniciarBtn">🎵 Play sapita mía</button>
+
+<div id="mensajeBienvenida">💌 Esta página especial es para usted, La música ha comenzado... 💖</div>
+
+<script>
+  const audio = document.getElementById("backgroundMusic");
+  const mensaje = document.getElementById("mensajeBienvenida");
+  const btn = document.getElementById("iniciarBtn");
+
+  btn.addEventListener("click", () => {
+    audio.play().then(() => {
+      btn.style.display = "none";
+      mensaje.classList.add("mostrar");
+    }).catch(err => {
+      alert("El navegador bloqueó la reproducción. Intenta hacer clic nuevamente.");
+      console.error(err);
+    });
+  });
+</script>
+
+  <!-- 🌹 Poema sobre imagen -->
+  <section class="poem-container">
+    <div class="poem-text">
+	<br><br>
+"Sé que puedo darle algo mejor de mí,<br>
+mi lado más maduro,<br>
+mi lado más romántico,<br>
+más noble,<br>
+un cariño sincero,<br>
+mi carcajada más fuerte,<br>
+mi sonrisa más sincera,<br>
+mi caricia más delicada,<br>
+tiempo de calidad,<br>
+días más importantes,<br>
+momentos más reales, más comunes,<br>
+mis canciones favoritas,<br>
+mis mensajes más certeros,<br>
+mi vida más cerca de la suya,<br>
+mi día a día,<br>
+ya no solo en mis pensamientos,<br>
+sino más en mi vida real,<br>
+mi mejor versión, eso quiero darle,<br>
+permítame hacerlo, comparta conmigo."
+    </div>
+  </section>
+
+  <main>
+    <p class="question">¿Quiere volverlo a intentar?</p>
+    <p class="message">Si me dice que sí, prometo enamorarla a la primera sonrisa.</p>
+
+  
+  </main>
+<!-- Iframe oculto con enablejsapi -->
+
+
+  <footer>
+    Con todo mi amor, su sapito 💖🐸
+  </footer>
+
+</body>
+
+
+
+
+
+</html>
+

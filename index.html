@@ -228,7 +228,8 @@
 
 
 
-	  .carousel-container {
+
+	.carousel-container {
   position: relative;
   width: 100%;
   max-width: 800px;
@@ -272,7 +273,7 @@
 .carousel-btn:hover {
   background-color: #ec407a;
 }
-
+  
 
 
 
@@ -377,6 +378,41 @@ permítame hacerlo, comparta conmigo."
     Con todo mi amor, su sapito 💖🐸
   </footer>
 
+
+
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  const slides = document.querySelectorAll('.carousel-track img');
+  const slideWidth = slides[0].offsetWidth + 40; // imagen + gap
+  let index = 0;
+
+  function updatePosition() {
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updatePosition();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updatePosition();
+  });
+
+  // Auto-slide cada 4.5 segundos
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    updatePosition();
+  }, 4500);
+</script>
+
+	
+
+	
 </body>
 
 
